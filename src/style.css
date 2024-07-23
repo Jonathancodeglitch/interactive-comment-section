@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --moderate-blue: hsl(238, 40%, 52%);
+  --soft-red: hsl(358, 79%, 66%);
+  --light-greyish-blue: hsl(239, 57%, 85%);
+  --pale-red: hsl(357, 92%, 59%);
+  --dark-blue: hsl(212, 24%, 26%);
+  --grayish-blue: hsl(212, 24%, 26%);
+  --light-grey: hsl(228, 33%, 97%);
+  --very-light-grey: hsl(228, 33%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Rubik", sans-serif;
+  color: var(--grayish-blue);
+  line-height: 1.4;
+}
+
+img {
+  max-width: 100%;
+}
+
+.main {
+  background-color: var(--very-light-grey);
+  min-height: 100vh;
+  padding-block: 40px;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+}
+
+.main .container > * + * {
+  margin-top: 20px;
+}
+
+/* user */
+.user {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  align-items: flex-start;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user_content {
+  width: 100%;
+}
+
+.profile .profile_img {
+  width: 35px;
+  height: 35px;
+}
+
+.profile .profile_name {
+  font-weight: 700;
+}
+
+.currentuser-icon {
+  display: inline-block;
+  background-color: var(--moderate-blue);
+  color: var(--white);
+  padding: 3px 7px;
+  line-height: 1;
+  font-weight: 400;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.user_comment {
+  margin-top: 20px;
+}
+
+.user_comment span {
+  color: var(--moderate-blue);
+  font-weight: 700;
+}
+
+.vote {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: var(--very-light-grey);
+  border-radius: 10px;
+}
+
+.vote_btn img {
+  display: block;
+}
+
+.vote .count {
+  color: var(--moderate-blue);
+  font-weight: 500;
+}
+
+.user_action-btns {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user_action-btns > button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.user_action-btns > button > span {
+  font-weight: 700;
+  color: var(--moderate-blue);
+  font-size: 17px;
+}
+
+.user_action-btns > button.del-btn > span {
+  color: var(--soft-red);
+}
+
+/* reply-comment-container */
+
+.reply-comment > * + * {
+  margin-top: 20px;
+}
+
+.reply-comment {
+  border-left: 2px solid rgba(0, 0, 0, 0.07);
+}
+
+.reply-comment .user {
+  width: 95%;
+  margin-left: auto;
+}
+
+/* add-comment-container */
+.add-comment-container {
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 140px 20px 20px 20px;
+
+  justify-content: space-between;
+}
+
+.add-comment-container textarea {
+  outline: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  padding: 15px 0px 0px 30px;
+  font-size: 18px;
+  color: var(--grayish-blue);
+}
+
+.add-comment-container textarea::placeholder {
+  color: var(--grayish-blue);
+  font-weight: 500;
+}
+
+.current-user-img {
+  width: 30px;
+  height: 30px;
+}
+
+.add-commemt_btn {
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--moderate-blue);
+  font-size: 18px;
+  padding: 12px 22px;
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .user_action-btns {
+    position: static;
+  }
+
+  .user_content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .user {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .vote {
+    display: block;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .reply-comment {
+    width: 95%;
+    margin-left: auto;
+  }
+
+  .add-comment-container {
+    padding: 20px;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .add-comment-container textarea {
+    position: static;
+    width: 100%;
+  }
+}
